@@ -26,12 +26,12 @@ export async function render(el, opts = {}) {
 	await injectCss()
 
 	const id = "lq" + ++counter
-	el.classList.add("lynq-widget")
+	el.classList.add("lynqa-widget")
 	el.innerHTML =
 		'<div class=lq-box id="' + id + '"><span class=lq-cb></span><span class=lq-bl>Verifying…</span></div>'
 	const input = document.createElement("input")
 	input.type = "hidden"
-	input.name = opts.responseField || el.getAttribute("data-response-field") || "lynq-captcha-response"
+	input.name = opts.responseField || el.getAttribute("data-response-field") || "lynqa-captcha-response"
 	el.appendChild(input)
 
 	const cb = resolveFn(opts.callback, el, "data-callback")

@@ -3,17 +3,17 @@ import { render } from "./widget.js"
 import { runPage } from "./page.js"
 
 function auto() {
-	document.querySelectorAll(".lynq-captcha[data-sitekey]").forEach((el) => render(el))
+	document.querySelectorAll(".lynqa-captcha[data-sitekey]").forEach((el) => render(el))
 }
 
-window.lynq = {
+window.lynqa = {
 	render: (el, opts) => render(typeof el === "string" ? document.querySelector(el) : el, opts || {}),
 	ready: (cb) => cb(),
 }
 
 function boot() {
 	const pageKey = SCRIPT && SCRIPT.getAttribute("data-sitekey")
-	if (SCRIPT && SCRIPT.hasAttribute("data-lynq-page") && pageKey) return runPage(pageKey)
+	if (SCRIPT && SCRIPT.hasAttribute("data-lynqa-page") && pageKey) return runPage(pageKey)
 	auto()
 }
 

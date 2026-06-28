@@ -1,4 +1,4 @@
-.lynq-widget{display:inline-block}
+.lynqa-widget{display:inline-block}
 .lq-box{display:inline-flex;align-items:center;gap:.7rem;background:#fafafa;border:1px solid #d4d4d4;border-radius:6px;padding:.7rem .9rem;width:300px;font:14px/1.4 ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;color:#222;user-select:none}
 .lq-box.lq-click{cursor:pointer}
 .lq-cb{width:22px;height:22px;border:2px solid #9aa0a6;border-radius:4px;flex-shrink:0;position:relative;transition:.15s}

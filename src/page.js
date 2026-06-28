@@ -40,7 +40,7 @@ async function preserve(token) {
 	const redirect = SCRIPT.getAttribute("data-redirect")
 	if (redirect) {
 		const u = new URL(redirect, location.href)
-		u.searchParams.set("lynq-captcha-response", token)
+		u.searchParams.set("lynqa-captcha-response", token)
 		location.assign(u)
 		return
 	}
@@ -48,8 +48,8 @@ async function preserve(token) {
 	try {
 		await fetch(cb, {
 			method: "POST",
-			headers: { "content-type": "application/json", "x-lynq-token": token },
-			body: JSON.stringify({ "lynq-captcha-response": token }),
+			headers: { "content-type": "application/json", "x-lynqa-token": token },
+			body: JSON.stringify({ "lynqa-captcha-response": token }),
 		})
 	} catch {
 		/* ignore */

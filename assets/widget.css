@@ -1,0 +1,13 @@
+.lynq-widget{display:inline-block}
+.lq-box{display:inline-flex;align-items:center;gap:.7rem;background:#fafafa;border:1px solid #d4d4d4;border-radius:6px;padding:.7rem .9rem;width:300px;font:14px/1.4 ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;color:#222;user-select:none}
+.lq-box.lq-click{cursor:pointer}
+.lq-cb{width:22px;height:22px;border:2px solid #9aa0a6;border-radius:4px;flex-shrink:0;position:relative;transition:.15s}
+.lq-box.lq-go .lq-cb{border-radius:50%;border-color:#c9c9c9;border-top-color:#555;animation:lqspin .75s linear infinite}
+.lq-box.ok .lq-cb{border-color:#22b8a6;background:#22b8a6}
+.lq-box.ok .lq-cb:after{content:"";position:absolute;left:6px;top:2px;width:6px;height:11px;border:solid #fff;border-width:0 2px 2px 0;transform:rotate(45deg)}
+.lq-box.err .lq-cb{border-color:#e06666;background:#e06666}
+.lq-bl{flex:1;font-weight:500}
+.lq-box.ok .lq-bl{color:#0a7a5a}
+.lq-box.err .lq-bl{color:#b23b3b}
+@keyframes lqspin{to{transform:rotate(360deg)}}
+@media (prefers-reduced-motion:reduce){.lq-box.lq-go .lq-cb{animation:none}}

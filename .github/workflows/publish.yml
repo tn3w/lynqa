@@ -32,7 +32,7 @@ jobs:
 
       - name: Syntax check sources
         if: steps.check.outputs.new == 'true'
-        run: npm run check
+        run: for f in src/*.js; do node --check "$f"; done
 
       - name: Publish
         if: steps.check.outputs.new == 'true'

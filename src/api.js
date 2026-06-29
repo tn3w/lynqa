@@ -13,7 +13,7 @@ window.lynqa = {
 
 function boot() {
 	const pageKey = SCRIPT && SCRIPT.getAttribute("data-sitekey")
-	if (SCRIPT && SCRIPT.hasAttribute("data-lynqa-page") && pageKey) return runPage(pageKey)
+	if (pageKey) return runPage(pageKey)
 	auto()
 }
 

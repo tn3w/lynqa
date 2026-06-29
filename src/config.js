@@ -1,7 +1,4 @@
-const script =
-	document.currentScript ||
-	document.querySelector("script[data-lynqa-page]") ||
-	document.querySelector('script[src*="lynqa"]')
+const script = document.currentScript || document.querySelector('script[src*="lynqa"]')
 
 const src = (script?.getAttribute("src") || "").split("?")[0].replace(/\/$/, "")
 

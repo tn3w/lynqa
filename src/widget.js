@@ -1,4 +1,4 @@
-import { ASSET_BASE } from "./config.js"
+import { ASSET_BASE, SCRIPT } from "./config.js"
 import { fetchChallenge, solve } from "./runtime.js"
 import { track } from "./behavior.js"
 
@@ -9,7 +9,10 @@ async function injectCss() {
 	if (cssDone) return
 	cssDone = true
 	const css = await (await fetch(ASSET_BASE + "widget.css")).text()
-	document.head.insertAdjacentHTML("beforeend", "<style>" + css + "</style>")
+	const style = document.createElement("style")
+	style.textContent = css
+	if (SCRIPT && SCRIPT.nonce) style.nonce = SCRIPT.nonce
+	document.head.appendChild(style)
 }
 
 function resolveFn(opt, el, attr) {

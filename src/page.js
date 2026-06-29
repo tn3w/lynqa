@@ -8,6 +8,13 @@ async function asset(name) {
 	return (await fetch(ASSET_BASE + name)).text()
 }
 
+function addStyle(css) {
+	const style = document.createElement("style")
+	style.textContent = css
+	if (SCRIPT && SCRIPT.nonce) style.nonce = SCRIPT.nonce
+	document.head.appendChild(style)
+}
+
 function fill(html) {
 	const d = document
 	d.documentElement.lang = "en"
@@ -96,7 +103,7 @@ function render(v) {
 
 export async function runPage(sitekey) {
 	const [css, html] = await Promise.all([asset("page.css"), asset("page.html")])
-	document.head.insertAdjacentHTML("beforeend", "<style>" + css + "</style>")
+	addStyle(css)
 	const start = Date.now()
 	const finalize = track("verify")
 	fill(html)

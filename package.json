@@ -1,7 +1,10 @@
 {
   "name": "lynqa",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "license": "GPL-3.0-only",
   "type": "module",
-  "main": "src/api.js"
+  "main": "src/api.js",
+  "scripts": {
+    "check": "for f in src/*.js; do node --check \"$f\" || exit 1; done"
+  }
 }
